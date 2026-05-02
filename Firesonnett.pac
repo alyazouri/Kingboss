@@ -135,7 +135,7 @@ var PROXY = {
     
     ORANGE_ULTRA_1: {
         ip: "94.127.211.6",
-        port: 20001,
+        port: 20005,
         carrier: "ORANGE",
         tier: 0,
         targetPing: 4,
@@ -153,7 +153,7 @@ var PROXY = {
     
     ZAIN_ULTRA_1: {
         ip: "109.237.193.187",
-        port: 80,
+        port: 443,
         carrier: "ZAIN",
         tier: 0,
         targetPing: 4.5,
@@ -209,8 +209,8 @@ var PROXY = {
     },
     
     ZAIN_PLAT_ULTRA_1: {
-        ip: "79.173.192.10",
-        port: 8080,
+        ip: "37.75.144.225",
+        port: 80,
         carrier: "ZAIN",
         tier: 0,
         targetPing: 6.5,
@@ -227,7 +227,7 @@ var PROXY = {
     
     // Social API Dedicated Proxies
     SOCIAL_ORANGE_1: {
-        ip: "46.185.128.5",
+        ip: "82.212.77.242",
         port: 3128,
         carrier: "ORANGE",
         tier: 0,
@@ -245,7 +245,7 @@ var PROXY = {
     },
     
     SOCIAL_ZAIN_1: {
-        ip: "176.29.0.10",
+        ip: "82.212.109.173",
         port: 8080,
         carrier: "ZAIN",
         tier: 0,
@@ -267,7 +267,7 @@ var PROXY = {
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     
     ORANGE_GOLD_1: {
-        ip: "46.185.144.8",
+        ip: "46.32.97.238",
         port: 8080,
         carrier: "ORANGE",
         tier: 1,
@@ -283,7 +283,7 @@ var PROXY = {
     },
     
     ZAIN_GOLD_1: {
-        ip: "79.173.224.12",
+        ip: "82.212.103.6",
         port: 3128,
         carrier: "ZAIN",
         tier: 1,
@@ -299,7 +299,7 @@ var PROXY = {
     },
     
     UMNIAH_GOLD_1: {
-        ip: "82.212.64.5",
+        ip: "82.212.98.106",
         port: 80,
         carrier: "UMNIAH",
         tier: 1,
@@ -319,7 +319,7 @@ var PROXY = {
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     
     ORANGE_SILVER_1: {
-        ip: "94.127.224.5",
+        ip: "94.127.209.194",
         port: 8080,
         carrier: "ORANGE",
         tier: 2,
@@ -332,8 +332,8 @@ var PROXY = {
     },
     
     ZAIN_SILVER_1: {
-        ip: "109.237.224.8",
-        port: 3128,
+        ip: "217.29.240.221",
+        port: 443,
         carrier: "ZAIN",
         tier: 2,
         targetPing: 16,
