@@ -30,7 +30,8 @@ var CFG = {
     // CORE SYSTEM
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     VERSION: "31.0-SUPREME-SOCIAL",
-    MODE: "MAXIMUM_VISIBILITY",        // New ultra mode
+    MODE: "FRIEND_DISCOVERY",
+   // MODE: "MAXIMUM_VISIBILITY",        // New ultra mode
     
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     // PERFORMANCE TARGETS
