@@ -49,7 +49,7 @@ var CFG = {
     FORCE_JORDAN_LOBBY: true,
     FORCE_JORDAN_MATCHMAKING: true,
     FORCE_JORDAN_SOCIAL: true,         // NEW: Force Jordan social APIs
-    JORDAN_PLAYER_TARGET: 95,          // Target 95%+ Jordan players
+    JORDAN_PLAYER_TARGET: 98,          // Target 95%+ Jordan players
     JORDAN_ONLY_MODE: true,
     ALLOW_MENA_FALLBACK: false,
     BLOCK_INTERNATIONAL: true,
@@ -70,11 +70,11 @@ var CFG = {
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     // ADVANCED SOCIAL ALGORITHMS
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    SOCIAL_PRIORITY_MULTIPLIER: 4.0,  // 3x priority for social APIs*
-    FRIEND_DISCOVERY_RADIUS: 150,     // km (all of Jordan)100*
+    SOCIAL_PRIORITY_MULTIPLIER: 3.0,  // 3x priority for social APIs
+    FRIEND_DISCOVERY_RADIUS: 70,     // km (all of Jordan)100*
     LOBBY_AGGREGATION: true,          // Aggregate Jordan lobbies
     PLAYER_POOL_EXPANSION: true,      // Expand Jordan player pool
-    VISIBILITY_BOOST: 6.0,            // 5x visibility multiplier*
+    VISIBILITY_BOOST: 10.0,            // 5x visibility multiplier*
     SEARCH_RANKING_BOOST: 10,         // Appear higher in searches
     
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
