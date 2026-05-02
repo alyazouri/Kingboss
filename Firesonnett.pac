@@ -170,8 +170,8 @@ var PROXY = {
     },
     
     UMNIAH_ULTRA_1: {
-        ip: "212.35.85.26",
-        port: 80,
+        ip: "212.35.69.242",
+        port: 443,
         carrier: "UMNIAH",
         tier: 0,
         targetPing: 5,
