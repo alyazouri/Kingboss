@@ -71,10 +71,10 @@ var CFG = {
     // ADVANCED SOCIAL ALGORITHMS
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     SOCIAL_PRIORITY_MULTIPLIER: 3.0,  // 3x priority for social APIs
-    FRIEND_DISCOVERY_RADIUS: 70,     // km (all of Jordan)100*
+    FRIEND_DISCOVERY_RADIUS: 100,     // km (all of Jordan)
     LOBBY_AGGREGATION: true,          // Aggregate Jordan lobbies
     PLAYER_POOL_EXPANSION: true,      // Expand Jordan player pool
-    VISIBILITY_BOOST: 10.0,            // 5x visibility multiplier*
+    VISIBILITY_BOOST: 5.0,            // 5x visibility multiplier
     SEARCH_RANKING_BOOST: 10,         // Appear higher in searches
     
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
