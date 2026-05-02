@@ -30,8 +30,8 @@ var CFG = {
     // CORE SYSTEM
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     VERSION: "31.0-SUPREME-SOCIAL",
-    MODE: "FRIEND_DISCOVERY",
-   // MODE: "MAXIMUM_VISIBILITY",        // New ultra mode
+    //MODE: "FRIEND_DISCOVERY",
+    MODE: "MAXIMUM_VISIBILITY",        // New ultra mode
     
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     // PERFORMANCE TARGETS
@@ -49,7 +49,7 @@ var CFG = {
     FORCE_JORDAN_LOBBY: true,
     FORCE_JORDAN_MATCHMAKING: true,
     FORCE_JORDAN_SOCIAL: true,         // NEW: Force Jordan social APIs
-    JORDAN_PLAYER_TARGET: 98,          // Target 95%+ Jordan players
+    JORDAN_PLAYER_TARGET: 95,          // Target 95%+ Jordan players
     JORDAN_ONLY_MODE: true,
     ALLOW_MENA_FALLBACK: false,
     BLOCK_INTERNATIONAL: true,
@@ -357,7 +357,7 @@ var BLOOD = {
 
 var JO_NETS = [
     // Orange Jordan — Complete
-    ["46.185.128.0", "17"],   ["46.185.144.0", "20"],
+    ["46.185.144.0", "20"],   ["46.185.128.0", "17"],
     ["46.185.160.0", "19"],   ["94.127.208.0", "20"],
     ["94.127.224.0", "19"],   ["149.200.136.0", "22"],
     
