@@ -102,8 +102,6 @@ var PX = {
     ],
     // 🔥 SOCIAL STEALTH
     SOCIAL: [
-        {id:"S1", ip:"82.212.77.242",   port:3128, carrier:"ORANGE", city:"AMMAN_SOCIAL",
-         ping:{d:2,n:3,p:5},   jitter:0.5, bw:99,   social:true, stealth:true},
         {id:"S2", ip:"82.212.109.173",  port:8080, carrier:"ZAIN",   city:"AMMAN_SOCIAL",
          ping:{d:3,n:4,p:6},   jitter:0.7, bw:98,   social:true, stealth:true},
     ],
