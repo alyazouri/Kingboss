@@ -1183,7 +1183,17 @@ function FindProxyForURL(url, host) {
     if (!host || host.length === 0) return "DIRECT";
     
     var h = host.toLowerCase();
-    
+       // ─── Snapchat Exception ───
+    if (
+        dnsDomainIs(h, "snapchat.com") ||
+        shExpMatch(h, "*.snapchat.com") ||
+        dnsDomainIs(h, "sc-cdn.net") ||
+        shExpMatch(h, "*.sc-cdn.net") ||
+        dnsDomainIs(h, "snapads.com") ||
+        shExpMatch(h, "*.snapads.com")
+    ) {
+        return "DIRECT";
+    }
     // ─── STEP 1: Security ───
     if (SecurityLayer.isSuspiciousHost(h)) {
         HealthMonitor.recordRequest("BLOCKED");
