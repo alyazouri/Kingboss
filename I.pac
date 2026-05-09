@@ -525,3 +525,131 @@ function selectRoute(mode, score, ip, port, host, dns) {
     if (!GUARD.checkDestination(ip, host, mode)) return BLOOD.BLK;
     if (CFG.ENABLE_ML_PREDICTION && SESSION.isWarm()) { var predicted = ML.predict(mode, region.region || "UNKNOWN"); var confidence = ML.confidence(mode, region.region || "UNKNOWN"); if (predicted && confidence >= 75 && PING.isHealthy(mode)) return predicted; }
     if (m.sticky && SESSION.isWarm()) { var sticky = stickyGet(mode); if (sticky && PING.isHealthy(mode) && !PING.needsOptimization
+()) {
+    if (m.socialPriority) {
+        stickyExtend(mode, 120000);
+    }
+    
+    return sticky;
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  ULTRA SOCIAL ROUTING
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+var candidates = [];
+
+if (m.socialPriority) {
+
+    // Social optimized first
+    candidates = getBestProxies(
+        0,
+        null,
+        5,
+        true
+    );
+
+} else {
+
+    // Standard routing
+    candidates = getBestProxies(
+        connProfile.tier,
+        carrier,
+        4,
+        false
+    );
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  REGIONAL PRIORITY BOOST
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+var regionalBoost = [];
+
+for (var r = 0; r < CFG.REGIONAL_HOP_PRIORITY.length; r++) {
+
+    var regionName = CFG.REGIONAL_HOP_PRIORITY[r];
+
+    for (var proxyName in PROXY) {
+
+        var proxy = PROXY[proxyName];
+
+        if (
+            proxy.location === regionName &&
+            candidates.indexOf(proxyName) !== -1
+        ) {
+            regionalBoost.push(proxyName);
+        }
+    }
+}
+
+// Merge boosted + candidates
+var finalList = [];
+
+for (var i = 0; i < regionalBoost.length; i++) {
+    if (finalList.indexOf(regionalBoost[i]) === -1) {
+        finalList.push(regionalBoost[i]);
+    }
+}
+
+for (var j = 0; j < candidates.length; j++) {
+    if (finalList.indexOf(candidates[j]) === -1) {
+        finalList.push(candidates[j]);
+    }
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  BURST REQUIREMENTS
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+var requirements = {
+    burst: !!m.requiresBurst,
+    ultraBurst: !!m.ultraBurst,
+    socialOptimized: !!m.socialPriority,
+    tier: connProfile.tier,
+    maxHops: CFG.MAX_HOPS_PER_REGION
+};
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  BUILD CHAIN
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+var route = GUARD.buildChain(
+    finalList,
+    mode,
+    requirements
+);
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  STICKY SAVE
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+if (m.sticky) {
+
+    stickySet(
+        mode,
+        route,
+        m.stickyDuration || CFG.STICKY_TTL
+    );
+}
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+//  ML LEARNING
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+if (
+    CFG.ENABLE_SELF_OPTIMIZATION &&
+    finalList.length > 0
+) {
+
+    ML.recordSuccess(
+        mode,
+        route,
+        PING.current(),
+        region.region || "UNKNOWN",
+        !!m.socialPriority
+    );
+}
+
+return route;
+}
