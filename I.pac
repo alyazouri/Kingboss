@@ -36,10 +36,10 @@ var CFG = {
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     // PERFORMANCE TARGETS
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    TARGET_PING: 4,
+    TARGET_PING: 40,
     SOCIAL_API_TARGET: 3,
     EXCELLENT_PING: 8,
-    GOOD_PING: 12,
+    GOOD_PING: 48,
     MAX_ACCEPTABLE_PING: 15,
     CRITICAL_PING: 20,
     
@@ -51,7 +51,7 @@ var CFG = {
     FORCE_JORDAN_SOCIAL: true,
     JORDAN_PLAYER_TARGET: 98,
     JORDAN_ONLY_MODE: true,
-    ALLOW_MENA_FALLBACK: false,
+    ALLOW_MENA_FALLBACK: true,
     BLOCK_INTERNATIONAL: true,
     
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
