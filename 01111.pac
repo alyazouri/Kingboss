@@ -1,6 +1,6 @@
 // ═══════════════════════════════════════════════════════════════════════
 //  PUBG JORDAN ULTIMATE v34.0 — RIPE VERIFIED
-//  🇯🇴 Max Lobby Players | ⚡ <25ms JO | <30ms EU | <40ms MENA
+//  🇯🇴 Max Lobby Players | ⚡ <25ms JO | <30ms EU | <40ms MENAa
 //  👥 Maximum Player Discovery |  RIPE JO 128 blocks / 647,936 IPs
 //  updated: 27 June 2026 — RIPE NCC JO delegations verified
 // ══════════════════════════════════════════════════════════════════════
