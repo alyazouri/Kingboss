@@ -1,17 +1,18 @@
 // ═══════════════════════════════════════════════════════════════════════
-//  PUBG JORDAN ULTIMATE v33.0 — HYPER REGIONAL · بيور أردني صارم
+//  PUBG JORDAN ULTIMATE v33.0 — HYPER REGIONAL · مخصّص
 //  🇯🇴 بيور أردني صارم | القفل الثلاثي مُفعّل | صفر تسامح
-//  صرامة: 100% — مُولّد عبر لوحة التحكم
+//  صرامة: 89% | سيرفرات مفعّلة: 7 | مُولّد عبر لوحة التحكم
 // ═══════════════════════════════════════════════════════════════════════
 
 var CFG = {
     VERSION: "33.0-HYPER-REGIONAL",
-    PROFILE: "بيور أردني صارم",
-    STRICTNESS_SCORE: 100,
+    PROFILE: "مخصّص",
+    STRICTNESS_SCORE: 89,
+    ENABLED_PROXIES: 7,
 
-    // ━━ الأداء ━━
-    TARGET_PING: 8,
-    MAX_ACCEPTABLE_PING: 20,
+    // ━━ الأداء (أهداف مُهيّأة — ليست قياسات حيّة) ━━
+    TARGET_PING: 2,
+    MAX_ACCEPTABLE_PING: 10,
 
     // ━━ الإجبار الأردني ━━
     FORCE_JORDAN_LOBBY: true,
@@ -22,8 +23,8 @@ var CFG = {
     JORDAN_ONLY_MODE: true,
     JORDAN_EXCLUSIVE_MODE: true,
     ALLOW_MENA_FALLBACK: false,
-    BLOCK_INTERNATIONAL: true,
-    BLOCK_NON_JORDAN_DNS: true,
+    BLOCK_INTERNATIONAL: false,
+    BLOCK_NON_JORDAN_DNS: false,
 
     // ━━ القفل الثلاثي ━━
     TRIPLE_LOCK_ENFORCEMENT: true,
@@ -37,7 +38,7 @@ var CFG = {
     FAIL_CLOSED: true,
     ZERO_TOLERANCE: true,
     REJECT_ON_VIOLATION: true,
-    MAX_PROXY_CHAIN: 6,
+    MAX_PROXY_CHAIN: 4,
 
     // ━━ Dual-Stack ━━
     ENABLE_IPV4: true,
@@ -47,50 +48,23 @@ var CFG = {
 
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//  HYPER JORDAN PROXY POOL — 35 سيرفر أردني
+//  HYPER JORDAN PROXY POOL — 7 سيرفر أردني مُفعّل
+//  ملاحظة: قيم targetPing هي أهداف مهيّأة وليست قياسات حيّة
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 var PROXY = {
-    ORANGE_HYPER_1: { ip: "94.127.211.6", port: 20001, carrier: "ORANGE", tier: 0, targetPing: 1.5, priority: 100, location: "AMMAN_CORE", protocol: "IPv4", verified: true, socialOptimized: true, hyperBurst: true, instantDiscovery: true },
-    ZAIN_HYPER_1: { ip: "109.237.193.187", port: 80, carrier: "ZAIN", tier: 0, targetPing: 2, priority: 99, location: "AMMAN_CORE", protocol: "IPv4", verified: true, socialOptimized: true, hyperBurst: true, instantDiscovery: true },
-    UMNIAH_HYPER_1: { ip: "212.35.85.26", port: 80, carrier: "UMNIAH", tier: 0, targetPing: 2.5, priority: 98, location: "AMMAN_CORE", protocol: "IPv4", verified: true, socialOptimized: true, hyperBurst: true, instantDiscovery: true },
     ORANGE_IPV6_1: { ip: "[2a02:ed0:5440::6]", port: 20001, carrier: "ORANGE", tier: 0, targetPing: 1, priority: 100, location: "AMMAN_CORE", protocol: "IPv6", verified: true, socialOptimized: true, hyperBurst: true, instantDiscovery: true, ipv6Native: true },
     ZAIN_IPV6_1: { ip: "[2a02:1308:ac09::187]", port: 443, carrier: "ZAIN", tier: 0, targetPing: 1.5, priority: 99, location: "AMMAN_CORE", protocol: "IPv6", verified: true, socialOptimized: true, hyperBurst: true, instantDiscovery: true, ipv6Native: true },
     UMNIAH_IPV6_1: { ip: "[2a01:9700:55::26]", port: 443, carrier: "UMNIAH", tier: 0, targetPing: 2, priority: 97, location: "AMMAN_CORE", protocol: "IPv6", verified: true, socialOptimized: true, hyperBurst: true, instantDiscovery: true, ipv6Native: true },
-    SOCIAL_ORANGE_HYPER: { ip: "46.185.128.5", port: 3128, carrier: "ORANGE", tier: 0, targetPing: 1.5, priority: 100, location: "AMMAN_SOCIAL", protocol: "IPv4", verified: true, socialOptimized: true, socialDedicated: true, hyperBurst: true, instantDiscovery: true },
-    SOCIAL_ZAIN_HYPER: { ip: "176.29.0.10", port: 8080, carrier: "ZAIN", tier: 0, targetPing: 2, priority: 99, location: "AMMAN_SOCIAL", protocol: "IPv4", verified: true, socialOptimized: true, socialDedicated: true, hyperBurst: true, instantDiscovery: true },
     SOCIAL_IPV6_ORANGE: { ip: "[2a02:ed0:5440:128::5]", port: 3128, carrier: "ORANGE", tier: 0, targetPing: 1, priority: 100, location: "AMMAN_SOCIAL", protocol: "IPv6", verified: true, socialOptimized: true, socialDedicated: true, hyperBurst: true, instantDiscovery: true, ipv6Native: true },
     SOCIAL_IPV6_ZAIN: { ip: "[2a02:1308:ac09:0::10]", port: 8080, carrier: "ZAIN", tier: 0, targetPing: 1.5, priority: 99, location: "AMMAN_SOCIAL", protocol: "IPv6", verified: true, socialOptimized: true, socialDedicated: true, hyperBurst: true, instantDiscovery: true, ipv6Native: true },
-    ORANGE_IRBID_HYPER: { ip: "46.185.176.5", port: 8080, carrier: "ORANGE", tier: 0, targetPing: 3, priority: 95, location: "IRBID", protocol: "IPv4", verified: true, socialOptimized: true, instantDiscovery: true },
-    ZAIN_IRBID_HYPER: { ip: "79.173.240.10", port: 3128, carrier: "ZAIN", tier: 0, targetPing: 3.5, priority: 94, location: "IRBID", protocol: "IPv4", verified: true, socialOptimized: true, instantDiscovery: true },
     ORANGE_IRBID_IPV6: { ip: "[2a02:ed0:5440:176::5]", port: 8080, carrier: "ORANGE", tier: 0, targetPing: 2.5, priority: 96, location: "IRBID", protocol: "IPv6", verified: true, socialOptimized: true, instantDiscovery: true, ipv6Native: true },
-    ORANGE_ZARQA_HYPER: { ip: "46.185.192.5", port: 8080, carrier: "ORANGE", tier: 0, targetPing: 2.5, priority: 96, location: "ZARQA", protocol: "IPv4", verified: true, socialOptimized: true, instantDiscovery: true },
-    ZAIN_ZARQA_HYPER: { ip: "176.28.128.10", port: 3128, carrier: "ZAIN", tier: 0, targetPing: 3, priority: 95, location: "ZARQA", protocol: "IPv4", verified: true, socialOptimized: true, instantDiscovery: true },
     ZARQA_IPV6: { ip: "[2a02:ed0:5440:192::5]", port: 8080, carrier: "ORANGE", tier: 0, targetPing: 2, priority: 97, location: "ZARQA", protocol: "IPv6", verified: true, socialOptimized: true, instantDiscovery: true, ipv6Native: true },
-    ORANGE_AQABA: { ip: "46.185.208.5", port: 8080, carrier: "ORANGE", tier: 1, targetPing: 5, priority: 90, location: "AQABA", protocol: "IPv4", verified: true, socialOptimized: true },
-    ZAIN_AQABA: { ip: "176.29.128.8", port: 3128, carrier: "ZAIN", tier: 1, targetPing: 5.5, priority: 89, location: "AQABA", protocol: "IPv4", verified: true, socialOptimized: true },
-    AQABA_IPV6: { ip: "[2a02:ed0:5440:208::5]", port: 8080, carrier: "ORANGE", tier: 1, targetPing: 4.5, priority: 91, location: "AQABA", protocol: "IPv6", verified: true, socialOptimized: true, ipv6Native: true },
-    ORANGE_MAFRAQ: { ip: "46.185.212.5", port: 8080, carrier: "ORANGE", tier: 1, targetPing: 5, priority: 88, location: "MAFRAQ", protocol: "IPv4", verified: true, socialOptimized: true },
-    MAFRAQ_IPV6: { ip: "[2a02:ed0:5440:212::5]", port: 8080, carrier: "ORANGE", tier: 1, targetPing: 4.5, priority: 89, location: "MAFRAQ", protocol: "IPv6", verified: true, socialOptimized: true, ipv6Native: true },
-    ORANGE_KARAK: { ip: "94.127.216.5", port: 8080, carrier: "ORANGE", tier: 1, targetPing: 6, priority: 86, location: "KARAK", protocol: "IPv4", verified: true, socialOptimized: true },
-    KARAK_IPV6: { ip: "[2a02:ed0:5440:216::5]", port: 8080, carrier: "ORANGE", tier: 1, targetPing: 5.5, priority: 87, location: "KARAK", protocol: "IPv6", verified: true, socialOptimized: true, ipv6Native: true },
-    ORANGE_MADABA: { ip: "82.212.160.5", port: 8080, carrier: "ORANGE", tier: 1, targetPing: 4, priority: 91, location: "MADABA", protocol: "IPv4", verified: true, socialOptimized: true },
-    MADABA_IPV6: { ip: "[2a01:9700:160::5]", port: 8080, carrier: "ORANGE", tier: 1, targetPing: 3.5, priority: 92, location: "MADABA", protocol: "IPv6", verified: true, socialOptimized: true, ipv6Native: true },
-    ORANGE_BALQA: { ip: "46.185.200.5", port: 8080, carrier: "ORANGE", tier: 1, targetPing: 4, priority: 91, location: "BALQA", protocol: "IPv4", verified: true, socialOptimized: true },
-    BALQA_IPV6: { ip: "[2a02:ed0:5440:200::5]", port: 8080, carrier: "ORANGE", tier: 1, targetPing: 3.5, priority: 92, location: "BALQA", protocol: "IPv6", verified: true, socialOptimized: true, ipv6Native: true },
-    ORANGE_JERASH: { ip: "82.212.192.5", port: 8080, carrier: "ORANGE", tier: 1, targetPing: 4.5, priority: 89, location: "JERASH", protocol: "IPv4", verified: true, socialOptimized: true },
-    JERASH_IPV6: { ip: "[2a01:9700:192::5]", port: 8080, carrier: "ORANGE", tier: 1, targetPing: 4, priority: 90, location: "JERASH", protocol: "IPv6", verified: true, socialOptimized: true, ipv6Native: true },
-    ORANGE_AJLOUN: { ip: "79.173.244.8", port: 3128, carrier: "ZAIN", tier: 1, targetPing: 5, priority: 88, location: "AJLOUN", protocol: "IPv4", verified: true, socialOptimized: true },
-    ORANGE_TAFILAH: { ip: "94.127.220.5", port: 8080, carrier: "ORANGE", tier: 1, targetPing: 7, priority: 84, location: "TAFILAH", protocol: "IPv4", verified: true, socialOptimized: true },
-    TAFILAH_IPV6: { ip: "[2a02:ed0:5440:220::5]", port: 8080, carrier: "ORANGE", tier: 1, targetPing: 6.5, priority: 85, location: "TAFILAH", protocol: "IPv6", verified: true, socialOptimized: true, ipv6Native: true },
-    ORANGE_MAAN: { ip: "94.127.222.5", port: 8080, carrier: "ORANGE", tier: 1, targetPing: 7, priority: 83, location: "MAAN", protocol: "IPv4", verified: true, socialOptimized: true },
-    MAAN_IPV6: { ip: "[2a02:ed0:5440:222::5]", port: 8080, carrier: "ORANGE", tier: 1, targetPing: 6.5, priority: 84, location: "MAAN", protocol: "IPv6", verified: true, socialOptimized: true, ipv6Native: true },
-    ORANGE_PETRA: { ip: "46.185.216.5", port: 8080, carrier: "ORANGE", tier: 1, targetPing: 7, priority: 82, location: "PETRA", protocol: "IPv4", verified: true, socialOptimized: true },
 };
 
 var BLOOD = {
     DIR: "DIRECT",
-    BLK: "PROXY 0.0.0.0:1; PROXY 127.0.0.1:1"
+    BLK: "PROXY 0.0.0.0:1; PROXY 127.0.0.1:1"   // حجب فعّال (blackhole)
 };
 
 
@@ -99,6 +73,10 @@ var BLOOD = {
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 var JO_NETS = [
+    ["46.185.128.0", "17"],
+    ["46.185.144.0", "20"],
+    ["46.185.160.0", "19"],
+    ["46.185.176.0", "20"],
     ["46.185.192.0", "19"],
     ["46.185.208.0", "20"],
     ["46.185.212.0", "22"],
@@ -153,6 +131,13 @@ var JO_NETS = [
 ];
 
 var JO_IPV6_NETS = [
+"2a02:ed0::",
+"2a02:ed0:5440::",
+"2a02:ed0:5441::",
+"2a02:ed0:5442::",
+"2a02:ed0:5443::",
+"2a02:ed0:5444::",
+"2a02:ed0:5445::",
 "2a02:1308::",
 "2a02:1308:ac09::",
 "2a02:1308:ac0a::",
@@ -170,12 +155,15 @@ var JO_IPV6_NETS = [
 
 var DIRECT_KEYS = ["apple", "icloud", "google", "facebook", "instagram", "whatsapp", "telegram", "twitter", "tiktok", "netflix", "spotify"];
 
+// ── قوائم مخصّصة (يتحكّم بها المستخدم) ──
+var BYPASS_HOSTS = ["discord.com", "store.steampowered.com"];        // تجاوز دائم → DIRECT
+var BLOCK_HOSTS = [];          // حظر دائم → BLOCK
+var FORCE_PROXY_HOSTS = ["my-crew.jo", "custom-server.jordan"]; // توجيه أردني إجباري → السلسلة
+
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 //  UTILITIES
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-function now() { return (new Date()).getTime(); }
 
 function isIPv4(str) {
     if (!str || str.indexOf(":") !== -1) return false;
@@ -271,26 +259,16 @@ var GUARD = {
     // بوابة الوجهة: ترفض أي شيء غير أردني في الوضع الصارم
     checkDestination: function (ip, host) {
         if (!ip) return CFG.FAIL_CLOSED ? false : true;
-
-        // حظر DNS غير أردني
-        if (CFG.BLOCK_NON_JORDAN_DNS && !this.verifyDNS(host)) {
-            this.blocked++; return false;
-        }
-        // حظر دولي
-        if (CFG.BLOCK_INTERNATIONAL && !this.isJordan(ip)) {
-            this.blocked++; return false;
-        }
-        // حصري / أردني فقط
-        if ((CFG.JORDAN_ONLY_MODE || CFG.JORDAN_EXCLUSIVE_MODE) && !this.isJordan(ip)) {
-            this.blocked++; return false;
-        }
+        if (CFG.BLOCK_NON_JORDAN_DNS && !this.verifyDNS(host)) { this.blocked++; return false; }
+        if (CFG.BLOCK_INTERNATIONAL && !this.isJordan(ip)) { this.blocked++; return false; }
+        if ((CFG.JORDAN_ONLY_MODE || CFG.JORDAN_EXCLUSIVE_MODE) && !this.isJordan(ip)) { this.blocked++; return false; }
         return true;
     }
 };
 
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//  CHAIN BUILDER — يبني سلسلة البروكسي الأردنية الزائدة
+//  CHAIN BUILDER — يبني سلسلة البروكسي الأردنية الزائدة (حتى MAX_PROXY_CHAIN)
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 function buildChain(names, maxLen) {
@@ -332,7 +310,20 @@ function FindProxyForURL(url, host) {
         }
     }
 
-    // خدمات غير اللعبة → مباشرة (ما لم تكن مطلوبة أردنية)
+    // قوائم مخصّصة (أسبقية أعلى من القواعد العامة)
+    if (containsAny(h, BYPASS_HOSTS)) return BLOOD.DIR;          // تجاوز دائم
+    if (containsAny(h, BLOCK_HOSTS)) return BLOOD.BLK;           // حظر دائم
+    if (containsAny(h, FORCE_PROXY_HOSTS)) return buildChain([   // توجيه أردني إجباري
+            "SOCIAL_IPV6_ORANGE",
+                "SOCIAL_IPV6_ZAIN",
+                "ORANGE_IPV6_1",
+                "ZAIN_IPV6_1",
+                "UMNIAH_IPV6_1",
+                "ZARQA_IPV6",
+                "ORANGE_IRBID_IPV6"
+        ]);
+
+    // خدمات غير اللعبة → مباشرة
     if (containsAny(h, DIRECT_KEYS)) return BLOOD.DIR;
 
     // حلّ الـ DNS (يفضّل IPv6 ثم IPv4)
@@ -344,20 +335,23 @@ function FindProxyForURL(url, host) {
     } catch (e) { ip = null; }
     if (!ip) { try { ip = dnsResolve(host); } catch (e2) { ip = null; } }
 
-    // القفل الثلاثي
     var carrier = "ORANGE";
-    if (!CFG.TRIPLE_LOCK_ENFORCEMENT ||
-        GUARD.verifyTripleLock(ip, h, carrier)) {
 
-        // بوابة الوجهة الأردنية الصارمة
-        if (GUARD.checkDestination(ip, h)) {
-            // سلسلة البروكسي الأردنية الزائدة
-            return buildChain([
-                "SOCIAL_IPV6_ORANGE", "ORANGE_IPV6_1", "ZAIN_IPV6_1",
-                "SOCIAL_ORANGE_HYPER", "ORANGE_HYPER_1", "ZAIN_HYPER_1",
-                "UMNIAH_IPV6_1", "UMNIAH_HYPER_1"
+    // القفل الثلاثي + بوابة الوجهة الصارمة
+    if ((!CFG.TRIPLE_LOCK_ENFORCEMENT || GUARD.verifyTripleLock(ip, h, carrier)) &&
+        GUARD.checkDestination(ip, h)) {
+
+        // سلسلة البروكسي الموصى بها — مرتّبة من المحدّد:
+        // اجتماعي مخصص → اجتماعي → IPv6 → Tier 0 → الأولوية → أقل استجابة
+        return buildChain([
+                "SOCIAL_IPV6_ORANGE",
+                "SOCIAL_IPV6_ZAIN",
+                "ORANGE_IPV6_1",
+                "ZAIN_IPV6_1",
+                "UMNIAH_IPV6_1",
+                "ZARQA_IPV6",
+                "ORANGE_IRBID_IPV6"
             ]);
-        }
     }
 
     // في الوضع الصارم: احجب بدل التمرير
@@ -365,5 +359,6 @@ function FindProxyForURL(url, host) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-//  نهاية السكربت · بيور أردني صارم · بيور أردني صارم · صرامة 100%
+//  نهاية السكربت · بيور أردني صارم · مخصّص
+//  صرامة 89% · 7 سيرفر مفعّل
 // ═══════════════════════════════════════════════════════════════════════
