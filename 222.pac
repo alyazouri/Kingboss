@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════════════════════
-//  PUBG JORDAN ULTIMATE v33.0 — MAX PLAYERS + ULTRA LOW PING
-//  🇯🇴 Max Lobby Players | ⚡ <30ms Europe | <50ms Middle East
-//  👥 Maximum Player Discovery |  Dual-Region Optimization
+//  PUBG JORDAN ULTIMATE v33.0 — MAX PLAYERS + ULTRA LOW PING (JORDAN DEVIATION)
+//  🇯🇴 Max Lobby Players | ⚡ Optimized for Jordan Telecoms (Zain, Orange, Uminiah)
+//  👥 Maximum Player Discovery | Dual-Region Optimization
 // ══════════════════════════════════════════════════════════════════════
 
 var CFG = {
@@ -84,11 +84,11 @@ var CFG = {
     AUTO_REPORT_GENERATION: true
 };
 
-//  PROXY POOL — Dual Region (Middle East + Europe)
+//  PROXY POOL — Middle East optimized (Jordan prioritized)
 var PROXY = {
     // TIER 0: MIDDLE EAST ULTRA — Sub-40ms
     ME_ULTRA_1: {
-        ip: "94.127.211.6", port: 20001, carrier: "ORANGE_JO",
+        ip: "94.127.211.6", port: 10010, carrier: "ORANGE_JO",
         tier: 0, targetPing: 25, reliability: 99.8,
         bandwidth: "ULTRA", priority: 100, capacity: 350,
         location: "AMMAN_CORE", region: "MIDDLE_EAST",
@@ -97,7 +97,7 @@ var PROXY = {
         playerBoost: true, lobbyOptimized: true
     },
     ME_ULTRA_2: {
-        ip: "109.237.193.187", port: 80, carrier: "ZAIN_JO",
+        ip: "109.237.193.187", port: 443, carrier: "ZAIN_JO",
         tier: 0, targetPing: 28, reliability: 99.7,
         bandwidth: "ULTRA", priority: 99, capacity: 340,
         location: "AMMAN_CORE", region: "MIDDLE_EAST",
@@ -105,59 +105,13 @@ var PROXY = {
         megaBurst: true, keepAlive: true, poolSize: 15,
         playerBoost: true, lobbyOptimized: true
     },
-    ME_ULTRA_3: {
-        ip: "82.212.0.1", port: 8080, carrier: "UMNIAH_JO",
-        tier: 0, targetPing: 30, reliability: 99.5,
-        bandwidth: "ULTRA", priority: 98, capacity: 330,
-        location: "AMMAN_SECONDARY", region: "MIDDLE_EAST",
-        socialOptimized: true, burstCapable: true, ultraBurst: true,
-        megaBurst: true, keepAlive: true, poolSize: 12,
-        playerBoost: true, lobbyOptimized: true
-    },
-    
-    // TIER 1: EUROPE ULTRA — Sub-30ms
-    EU_ULTRA_1: {
-        ip: "185.220.101.1", port: 443, carrier: "EUROPE_BACKBONE",
-        tier: 1, targetPing: 22, reliability: 99.9,
-        bandwidth: "ULTRA", priority: 97, capacity: 400,
-        location: "FRANKFURT_CORE", region: "EUROPE",
-        socialOptimized: true, burstCapable: true, ultraBurst: true,
-        megaBurst: true, keepAlive: true, poolSize: 18,
-        playerBoost: true, lobbyOptimized: true
-    },
-    EU_ULTRA_2: {
-        ip: "185.220.102.1", port: 443, carrier: "EUROPE_BACKBONE",
-        tier: 1, targetPing: 24, reliability: 99.8,
-        bandwidth: "ULTRA", priority: 96, capacity: 390,
-        location: "AMSTERDAM_CORE", region: "EUROPE",
-        socialOptimized: true, burstCapable: true, ultraBurst: true,
-        megaBurst: true, keepAlive: true, poolSize: 18,
-        playerBoost: true, lobbyOptimized: true
-    },
-    EU_ULTRA_3: {
-        ip: "185.220.103.1", port: 8443, carrier: "EUROPE_BACKBONE",
-        tier: 1, targetPing: 26, reliability: 99.7,
-        bandwidth: "ULTRA", priority: 95, capacity: 380,
-        location: "LONDON_CORE", region: "EUROPE",
-        socialOptimized: true, burstCapable: true, ultraBurst: true,
-        megaBurst: true, keepAlive: true, poolSize: 15,
-        playerBoost: true, lobbyOptimized: true
-    },
     
     // TIER 2: MENA REGIONAL — Sub-50ms
     MENA_1: {
-        ip: "188.114.96.1", port: 80, carrier: "CLOUDFLARE_MENA",
+        ip: "188.114.96.1", port: 443, carrier: "CLOUDFLARE_MENA",
         tier: 2, targetPing: 35, reliability: 99.5,
         bandwidth: "HIGH", priority: 90, capacity: 300,
         location: "DUBAI", region: "MIDDLE_EAST",
-        socialOptimized: true, burstCapable: true, ultraBurst: true,
-        keepAlive: true, poolSize: 10, playerBoost: true
-    },
-    MENA_2: {
-        ip: "193.108.88.1", port: 443, carrier: "AKAMAI_MENA",
-        tier: 2, targetPing: 38, reliability: 99.4,
-        bandwidth: "HIGH", priority: 89, capacity: 290,
-        location: "RIYADH", region: "MIDDLE_EAST",
         socialOptimized: true, burstCapable: true, ultraBurst: true,
         keepAlive: true, poolSize: 10, playerBoost: true
     },
@@ -173,53 +127,58 @@ var PROXY = {
     }
 };
 
-// 🌍 REGION NETWORKS — Expanded for Max Players
+// 🌍 REGION NETWORKS — Jordan Telecoms Dominant Majority (>80%)
 var MENA_NETS = [
-    // Jordan
-    ["46.185.144.0", "20"], ["46.185.128.0", "17"],
-    ["94.127.208.0", "20"], ["94.127.216.0", "21"],
-    ["79.173.192.0", "18"], ["109.237.192.0", "20"],
-    ["176.28.0.0", "15"], ["176.29.0.0", "16"],
-    ["82.212.0.0", "16"], ["212.35.64.0", "18"],
-    // Saudi Arabia
-    ["188.114.0.0", "16"], ["193.108.0.0", "16"],
-    ["5.1.0.0", "16"], ["5.2.0.0", "16"],
-    // UAE
-    ["94.200.0.0", "16"], ["185.15.0.0", "16"],
-    // Egypt
-    ["197.32.0.0", "16"], ["41.32.0.0", "16"],
-    // Iraq
-    ["5.188.0.0", "16"], ["37.236.0.0", "16"]
+    // === JORDAN TELECOMS IP RANGES (MAJORITY) ===
+    // Orange Jordan
+    ["46.185.128.0", "17"], 
+    ["46.185.144.0", "20"], 
+    ["94.127.208.0", "20"], 
+    ["94.127.216.0", "21"], 
+    ["79.173.192.0", "18"], 
+    ["193.188.64.0", "18"],
+    ["80.90.160.0", "19"],
+    ["185.228.112.0", "22"],
+    
+    // Zain Jordan
+    ["109.237.192.0", "20"], 
+    ["176.28.0.0", "15"], 
+    ["176.29.0.0", "16"], 
+    ["92.240.128.0", "17"],
+    ["188.247.0.0", "16"],
+    ["185.39.140.0", "22"],
+    
+    // Uminiah Jordan
+    ["82.212.0.0", "16"], 
+    ["212.35.64.0", "18"],
+    ["185.105.104.0", "22"],
+    ["193.107.0.0", "18"],
+    
+    // DAMAMAX & VTEL Jordan
+    ["194.165.128.0", "19"],
+    ["195.138.240.0", "20"],
+
+    // === REGIONAL FALLBACKS (MINORITY) ===
+    // Saudi Arabia & Gulf
+    ["188.114.0.0", "16"], 
+    ["193.108.0.0", "16"], 
+    ["5.1.0.0", "16"], 
+    ["94.200.0.0", "16"]
 ];
 
-var EUROPE_NETS = [
-    // Germany (Frankfurt)
-    ["185.220.101.0", "24"], ["185.220.102.0", "24"],
-    ["85.10.0.0", "16"], ["213.133.0.0", "16"],
-    // Netherlands (Amsterdam)
-    ["185.220.103.0", "24"], ["145.131.0.0", "16"],
-    ["31.3.0.0", "16"], ["62.133.0.0", "16"],
-    // UK (London)
-    ["185.220.104.0", "24"], ["81.2.0.0", "16"],
-    ["217.160.0.0", "16"], ["195.99.0.0", "16"],
-    // France (Paris)
-    ["185.220.105.0", "24"], ["212.27.0.0", "16"],
-    ["195.154.0.0", "16"], ["62.210.0.0", "16"]
-];
-
-// 🎮 MODES — Max Players + Low Ping
+// 🎮 MODES — Max Players + Low Ping (Adjusted for Jordan Routes)
 var MODES = {
     LOBBY: {
         sig: ["lobby", "queue", "matchmake", "room", "channel"],
         priority: 10,
-        targetPing: 25,               // Lower than 46ms Europe
-        maxPing: 50,                  // Lower than 85ms MENA
+        targetPing: 25,               
+        maxPing: 50,                  
         strategy: "MAX_PLAYERS_ULTRA_LOW_PING",
         sticky: true,
         stickyDuration: 300000,
-        playerBoost: 500,             // Maximum player discovery
+        playerBoost: 500,             
         matchmakingSpeed: 5.0,
-        searchRadius: 300,            // Wide area for more players
+        searchRadius: 300,            
         parallelQueries: 8,
         refreshRate: 500,
         dualRegion: true
@@ -254,26 +213,23 @@ var MODES = {
     GAME: {
         sig: ["game", "play", "combat", "battle"],
         priority: 10,
-        targetPing: 20,               // Lowest for gameplay
+        targetPing: 20,               
         maxPing: 40,
         strategy: "ULTRA_LOW_PING",
         sticky: true,
         stickyDuration: 600000,
-        playerBoost: 0,               // No boost during game
+        playerBoost: 0,               
         searchRadius: 200
     }
 };
 
-// 🛡️ GUARD SYSTEM — Smart Regional Control
+// 🛡️ GUARD SYSTEM — Smart Regional Control (Jordan Targeted)
 var GUARD = {
     ALLOW_REGION: function(ip, region) {
         if (region === "MIDDLE_EAST") {
             return this.isMENA(ip);
         }
-        if (region === "EUROPE") {
-            return this.isEurope(ip);
-        }
-        return this.isMENA(ip) || this.isEurope(ip);
+        return this.isMENA(ip); // Default fallback directly to MENA (Jordan)
     },
     isMENA: function(ip) {
         for (var i = 0; i < MENA_NETS.length; i++) {
@@ -284,11 +240,7 @@ var GUARD = {
         return false;
     },
     isEurope: function(ip) {
-        for (var i = 0; i < EUROPE_NETS.length; i++) {
-            if (isInNet(ip, EUROPE_NETS[i][0], this.cidrToMask(EUROPE_NETS[i][1]))) {
-                return true;
-            }
-        }
+        // Europe Networks removed as requested, returns false to bypass
         return false;
     },
     cidrToMask: function(cidr) {
@@ -306,12 +258,11 @@ var GUARD = {
     }
 };
 
-//  SCORE CALCULATION — Balance Players + Ping
+//  SCORE CALCULATION — Balance Players + Ping (Prioritizing ME_ULTRA)
 function calculateScore(ip, host, port, dns, mode) {
     var score = 0;
     var ping = estimatePing(ip);
     
-    // Ping score (lower is better)
     if (ping <= CFG.TARGET_PING_EUROPE) {
         score += 1000;
     } else if (ping <= CFG.TARGET_PING_MENA) {
@@ -330,9 +281,8 @@ function calculateScore(ip, host, port, dns, mode) {
         score += CFG.MATCHMAKING.playerBoost;
     }
     
-    // Region bonus
-    if (GUARD.isMENA(ip)) score += 200;
-    if (GUARD.isEurope(ip)) score += 150;
+    // Region bonus (Amman Core preferred)
+    if (GUARD.isMENA(ip)) score += 300; 
     
     // Proxy tier bonus
     var proxy = findBestProxy(ip);
@@ -346,7 +296,7 @@ function calculateScore(ip, host, port, dns, mode) {
     return score;
 }
 
-//  ROUTE SELECTION — Dual Region Smart Routing
+//  ROUTE SELECTION — Jordan Oriented Routing
 function selectRoute(mode, score, ip, port, host, dns) {
     var currentRegion = detectCurrentRegion();
     var bestProxy = findBestProxyForRegion(ip, currentRegion);
@@ -359,7 +309,7 @@ function selectRoute(mode, score, ip, port, host, dns) {
         return "PROXY " + bestProxy.ip + ":" + bestProxy.port;
     }
     
-    // Fallback to direct if ping is good
+    // Fallback to direct if ping is good (Amman Routing)
     if (estimatePing(ip) <= CFG.MAX_ACCEPTABLE_PING) {
         return "DIRECT";
     }
@@ -367,27 +317,26 @@ function selectRoute(mode, score, ip, port, host, dns) {
     return "PROXY " + PROXY.FALLBACK_1.ip + ":" + PROXY.FALLBACK_1.port;
 }
 
-// 🌐 REGION DETECTION
+// 🌐 REGION DETECTION (Auto detect MENA)
 function detectCurrentRegion() {
     var myIp = myIpAddress();
     if (GUARD.isMENA(myIp)) return "MIDDLE_EAST";
-    if (GUARD.isEurope(myIp)) return "EUROPE";
-    return "MIDDLE_EAST"; // Default
+    return "MIDDLE_EAST"; // Default to Jordan / Middle East Core
 }
 
-//  FIND BEST PROXY
+//  FIND BEST PROXY (Active Servers Only)
 function findBestProxy(ip) {
     var best = null;
     var bestScore = 0;
     
     var proxies = [
-        PROXY.ME_ULTRA_1, PROXY.ME_ULTRA_2, PROXY.ME_ULTRA_3,
-        PROXY.EU_ULTRA_1, PROXY.EU_ULTRA_2, PROXY.EU_ULTRA_3,
-        PROXY.MENA_1, PROXY.MENA_2, PROXY.FALLBACK_1
+        PROXY.ME_ULTRA_1, PROXY.ME_ULTRA_2,
+        PROXY.MENA_1, PROXY.FALLBACK_1
     ];
     
     for (var i = 0; i < proxies.length; i++) {
         var p = proxies[i];
+        if (!p) continue;
         var score = p.priority + (p.capacity / 10);
         if (p.megaBurst) score += 50;
         if (p.lobbyOptimized) score += 30;
@@ -403,29 +352,19 @@ function findBestProxy(ip) {
 
 function findBestProxyForRegion(ip, region) {
     if (region === "MIDDLE_EAST") {
-        return PROXY.ME_ULTRA_1;
-    }
-    if (region === "EUROPE") {
-        return PROXY.EU_ULTRA_1;
+        return PROXY.ME_ULTRA_1; // Orange Jordan Core
     }
     return findBestProxy(ip);
 }
 
 // ⚡ PING ESTIMATION
 function estimatePing(ip) {
-    // Simplified ping estimation based on network distance
-    if (GUARD.isMENA(ip)) return 35;
-    if (GUARD.isEurope(ip)) return 28;
-    return 60;
+    if (GUARD.isMENA(ip)) return 25; // Super ultra low latency inside Jordan ranges
+    return 55;
 }
 
 // 🎮 MAIN PAC FUNCTION
 function FindProxyForURL(url, host) {
-    // Prefetch on first request
-    if (SESSION.requests === 1) {
-        prefetchAllRegions();
-    }
-    
     // Block non-PUBG traffic
     if (!containsAny(host.toLowerCase(), PUBG_KEYS)) {
         return "DIRECT";
@@ -442,6 +381,5 @@ function FindProxyForURL(url, host) {
 
 // ═══════════════════════════════════════════════════════════════════════
 //  END OF PUBG JORDAN ULTIMATE v33.0
-//  🎯 Target: <30ms Europe | <50ms Middle East
-//   Max Players in Lobby & Matchmaking
+//  🎯 Optimized Target: <30ms inside JORDAN Networks
 // ═══════════════════════════════════════════════════════════════════════
